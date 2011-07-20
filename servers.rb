@@ -4,6 +4,7 @@ require 'sinatra/base'
 class Host < Sinatra::Base
 
   set :port, 8080
+  set :public, File.dirname(__FILE__) + "/public"
 
   get '/' do
     erb :host
@@ -13,7 +14,8 @@ end
 class Guest < Sinatra::Base
 
   set :port, 8081
-
+  set :public, File.dirname(__FILE__) + "/public"
+  
   get '/' do
     erb :guest
   end
