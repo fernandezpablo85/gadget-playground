@@ -1,28 +1,10 @@
 require 'rubygems'
-require 'sinatra/base'
+require 'sinatra'
 
-class Host < Sinatra::Base
-
-  set :port, 8080
-  set :public, File.dirname(__FILE__) + "/public"
-
-  get '/' do
-    erb :host
-  end
+get '/' do
+  erb :main
 end
 
-class Guest < Sinatra::Base
-
-  set :port, 8081
-  set :public, File.dirname(__FILE__) + "/public"
-  
-  get '/' do
-    erb :guest
-  end
+get '/frame' do
+  erb :frame
 end
-
-Thread.new {
-  Guest.run!  
-}
-sleep(1) # Wait for guest to load.
-Host.run!

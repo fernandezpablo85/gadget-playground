@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Home</title>
+    <script src='rpc.js'></script>
+    <script src='embeddables.js'></script>
+    <script>
+      Embeddables.on('poll:create', function (data){
+        alert('groups: created new poll: '+data.name);
+      })
+    </script>
+  </head>
+  <body>
+    <h1>Home</h1>
+    <iframe src='/frame'></iframe>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Frame</title>
+    <script src='rpc.js'></script>
+    <script src='embeddables.js'></script>    
+    <script>
+      function action () {
+
+        // create the poll
+
+        Embeddables.trigger('poll:create', {'name' : document.getElementById('poll-name').value});
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Iframe</h2>
+    <label for='poll-name'>Poll Name:</label>
+    <input type='text' id='poll-name'/><br/>
+    <a href="#" onclick='action();'>create_poll</a>
+  </body>
+</html>

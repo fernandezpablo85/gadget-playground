@@ -815,7 +815,7 @@ gadgets.rpc = function() {
         return;
       }
 
-      var rpcData = gadgets.json.stringify(rpc);
+      var rpcData = JSON.stringify(rpc);
 
       var channelType = relayChannel;
 
